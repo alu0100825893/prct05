@@ -58,4 +58,9 @@ class Fraccionario
         Fraccionario.new((mcm / @d * @n)+(mcm / other.d * other.n),mcm)
     end
     
+    def -(other)
+        mcm = mcm(@d,other.d)
+        Fraccionario.new((mcm / @d * @n)-(mcm / other.d * other.n),mcm)
+    end
+    
 end
