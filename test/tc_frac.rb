@@ -16,6 +16,7 @@ class TestFraccionario < Test::Unit::TestCase
         assert_equal(4, @unidad.mcm(2,4),"Error al calcular el minimo comun multiplo")
         assert_equal("(1,1)",(Fraccionario.new(2,4)+Fraccionario.new(1,2)).to_s,"Suma mal hecha")
         assert_equal("(11,14)",(Fraccionario.new(3,2)-Fraccionario.new(5,7)).to_s,"Resta mal hecha")
+        assert_equal("(15,14)",(Fraccionario.new(3,2)*Fraccionario.new(5,7)).to_s,"Multiplicacion mal hecha")
     end
     def test_type_check
         assert_raise(RuntimeError) {Fraccionario.new('1','1')}
