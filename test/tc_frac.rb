@@ -10,9 +10,11 @@ class TestFraccionario < Test::Unit::TestCase
         assert_equal("(0,1)", @cero.to_s)
         assert_equal("(1,1)", @unidad.to_s)
         assert_raise(RuntimeError) {Fraccionario.new(1,0)}
+        assert_equal("(1,1)", Fraccionario.new(3,3).to_s)
+        assert_equal("(2,5)", Fraccionario.new(6,15).to_s)
     end
     def test_type_check
         assert_raise(RuntimeError) {Fraccionario.new('1','1')}
     end
-    
+  
 end
