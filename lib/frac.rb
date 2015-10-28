@@ -10,9 +10,11 @@ class Fraccionario
         d = d / divisor
         @n, @d = n, d
     end
+    
     def to_s
     "(#{@n},#{@d})"
     end
+    
     def gcd(n, d)
         n1 = n.abs
         n2 = d.abs
@@ -25,6 +27,30 @@ class Fraccionario
             k += 1
         end
         return gcd
+    end
+    
+    def mcm(d1,d2)
+        mcm = 1
+        if (d1 < d2)
+            mcm = d2
+        else
+            mcm = d1
+        end
+        aux1 = d1
+        aux2 = d2
+        while (((mcm % aux1) != 0) or ((mcm % aux2) != 0))
+            if (aux1 < aux2)
+               aux1 = aux1+d1
+            else
+                aux2 = aux2+d2
+            end
+            if (aux1 < aux2)
+                mcm = aux2
+            else
+                mcm = aux1
+            end
+        end
+        return mcm
     end
     
 end
