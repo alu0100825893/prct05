@@ -67,4 +67,8 @@ class Fraccionario
         Fraccionario.new(@n * other.n, @d * other.d)
     end
     
+    def /(other)
+        Fraccionario.new(@n * other.d, @d * other.n)
+    end
+    
 end
