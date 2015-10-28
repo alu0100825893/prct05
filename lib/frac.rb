@@ -1,6 +1,6 @@
 
 class Fraccionario
-    attr_reader :x, :y
+    attr_reader :n, :d
     def initialize(n,d)
         raise RuntimeError, 'El numerador no es un numero' unless n.is_a? Numeric
         raise RuntimeError, 'El denominador no es un numero' unless d.is_a? Numeric
@@ -51,6 +51,11 @@ class Fraccionario
             end
         end
         return mcm
+    end
+    
+    def +(other)
+        mcm = mcm(@d,other.d)
+        Fraccionario.new((mcm / @d * @n)+(mcm / other.d * other.n),mcm)
     end
     
 end
